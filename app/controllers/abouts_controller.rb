@@ -29,6 +29,7 @@ class AboutsController < ApplicationController
   # POST /abouts.json
   def create
     @about = About.new(about_params)
+    @about.user = current_user
 
     respond_to do |format|
       if @about.save
